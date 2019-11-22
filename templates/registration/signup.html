@@ -1,0 +1,10 @@
+{% extends 'base.html%}
+{% load static %}
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static'registration/signup.css %}">
+{% block extra_css%}
+<form action="POST">
+    {% crsf_token %}
+    {{ form_as.p}}
+    <button class="btn">Submit</button>
+</form>

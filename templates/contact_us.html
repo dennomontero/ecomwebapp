@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body{
+        color: red;
+        background:grey;
+    }
+    .container{
+        width:100%;
+        /* height:80vh; */
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact_form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgb(105, 72, 72);
+        width:70%;
+        height:100%;
+    }
+    p,h2{
+        font-size: 33px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* color:red; */
+    }
+    .info_contact{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height:30%;
+        width:70%;
+    }
+    button{
+        background:green;
+        width:70%;
+        height:40px;
+        border-radius:20px;
+        margin-top:10px;
+        border:1px solid greenyellow;
+    }
+
+    .text{
+        width:50%;
+        height:60px;
+        text-align: center;
+    }
+    .text_email{
+        width:50%;
+        height:60px; 
+        text-align: center;
+    }
+    .messages{
+        width:70%;
+        height:90px; 
+        text-align: center;
+        border-radius: 10px;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+            <form action="Post" class="contact_form">
+                    <p>Contact us</p>
+                    <h2>Hola at us</h2>
+                    <div class="info_contact">
+                        <input type="text" class="text" value=Name>
+                        <input type="email" class="text_email" value=Email>
+                    </div>
+                    <input type="text" class="messages" id="message" Value=Messages>
+            
+                    <button type="submit">Send</button>
+                </form>
+    </div>
+
+{% endblock%}

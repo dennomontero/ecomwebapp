@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    *{
+        padding:0px;
+        margin:0px;
+        box-sizing: border-box;
+    }
+.container{
+    /* height:120%; */
+    display:flex;
+    flex-direction: column;
+    /* margin:10px; */
+    justify-content: center;
+    align-items: center;
+    background: grey;
+    
+}
+.content_left{
+    width:50%;
+    height:60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content_right{
+    width:50%;
+    height:60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size:30px;
+}
+p{
+    margin:10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+h3{
+    margin:10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:35px;
+    color:white;
+}
+.main{
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    margin:40px;
+}
+</style>
+<body>
+    <div class="container">
+                <H3>THIS IS ALL ABOUT US</H3>
+       <div class="main">        
+        <div class="content_left">
+                <h2>WHO ARE WE?</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit soluta temporibus
+                 quam ex dolor error eligendi corrupti incidunt,
+                sunt corporis molestias earum commodi minus ipsum esse nesciunt rerum et tempora?</p>
+                <h2>WHAT DO WE DO?</h2>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptatibus
+                  laboriosam cupiditate doloremque neque voluptate maxime, exercitationem atque delectus earum reiciendis? 
+                 Natus dolor neque accusantium fugit iste atque pariatur eaque.</p> 
+                <h2>WHERE ARE WE LOCATED?</h2>  
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo neque,
+                   doloribus esse quos rem iure odit ipsum eligendi tempore. Sapiente quas incidunt sunt,
+                   harum expedita optio consectetur tempora voluptates libero.</p>   
+        </div>
+        <div class="content_right">
+                <h2>WHAT DO WE DO?</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit soluta temporibus
+                        quam ex dolor error eligendi corrupti incidunt,
+                       sunt corporis molestias earum commodi minus ipsum esse nesciunt rerum et tempora?</p>
+                       <h2>WHAT DO WE DO?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptatibus
+                         laboriosam cupiditate doloremque neque voluptate maxime, exercitationem atque delectus earum reiciendis? 
+                        Natus dolor neque accusantium fugit iste atque pariatur eaque.</p>
+                        <h2>WHAT DO WE DO?</h2>   
+                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo neque,
+                          doloribus esse quos rem iure odit ipsum eligendi tempore. Sapiente quas incidunt sunt,
+                          harum expedita optio consectetur tempora voluptates libero.</p> 
+                        </div> 
+        </div>
+    </div>
+{% endblock %}

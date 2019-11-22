@@ -1,0 +1,103 @@
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    .container{
+        /* width:60vw; */
+        /* height:70vh; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .jumbotron{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:grey;
+        width:60vh;
+        height:60vh;
+        border-radius: 250px;
+    }
+    .left{
+        width:10vw;
+        height:20vh;
+        background: black;
+        margin-left:5px;
+    }
+    .details{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background:grey;
+        width:20vw;
+        height:20vh;
+
+    }
+    .total{
+    display:flex;
+    flex-direction: column;
+    }
+    .section{
+        display:flex;
+        flex-direction: column;
+        width:30vw;
+        height:20vh;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .username{
+        margin:10px;
+        text-align: center;
+        width:60%;
+        height:50px;
+        border-radius: 10px;
+        border:1px solid black;
+    }
+    .email{
+        margin:10px;
+        text-align: center;
+        width:60%;
+        height:50px;
+        border-radius: 10px;
+        border:1px solid black;
+    }
+    .btn{
+        background: green;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        width:100px;
+        height:40px;
+        border:1px solid rgb(49, 48, 48);
+    }
+</style>
+
+    <div class="container">
+        <div class="jumbotron">   
+            <div class="details">
+                <div class="left">
+                    <img src="" alt="img">
+                </div>
+                <div class="total">
+                        <p>{{user.username}}</p>
+                        <p>{{user.email}}</p>
+                </div>
+            </div>
+            <div class="section">
+                <input type="text" class="username" value="username">
+                <input type="email" class="email" value="email">
+            </div>
+            <button class="btn">
+                    update
+            </button>
+        </div>
+
+
+    </div>
+{% endblock %}

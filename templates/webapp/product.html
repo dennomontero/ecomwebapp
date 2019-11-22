@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+{%block content%}
+<style>
+.detail_container{
+    height:70vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item_detail_content{
+    display:flex;
+    flex-direction: column;
+    width:40%;
+    height:100%;
+    justify-content:start ;
+    /* align-items:center ; */
+}
+.extra_content{
+    border-top: 1px solid black;
+    height:30%;
+    display:flex;
+    flex-direction: center;
+    width:50%;
+    margin:20px;
+    justify-content: center;
+    align-items: center;
+}
+.detail_image{
+    /* margin-left: 40px; */
+    width:30%;
+    background:grey;
+    height:100%;
+}
+.main_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:10px;
+}
+</style>
+<div class="detail_container">
+    <div class="main_details">
+        <div class="detail_image">
+             <img src="" alt="">
+        </div>
+        <div class="item_detail_content">
+            <h2>Title</h2>
+                <p>{{item.title}}</p>
+            <h2>Description</h2>
+             <p>{{item.description}}</p>
+            <h2>item price:</h2>
+            <p>{{item.price}}</p>
+        {% if discount_price %}
+            <h2>privious price</h2>
+            <del>{{ item.discount_price}}</del>
+        {% endif %}
+
+        </div>
+    </div>
+    <div class="extra_content">
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Aperiam alias exercitationem praesentium itaque repellendus, 
+            magni cumque vitae cupiditate ipsa consectetur consequatur pariatur debitis vero necessitatibus
+             in porro repellat hic? Reprehenderit?
+            </p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

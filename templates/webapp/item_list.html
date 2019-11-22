@@ -1,0 +1,118 @@
+{% extends 'base.html'%}
+{% block content%}
+<style>
+.container{
+    color:black;
+    height:70vh;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card{
+    height:350px;
+    width:220px;
+    margin:10px;
+    border:1px solid grey;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background:white;
+   
+}
+.card:hover{
+    height: 310px;
+    width:210px;
+
+}
+/* a{
+    color:black;
+} */
+
+.qty_cart{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+    flex-direction: row;
+    text-align: center;
+   
+}
+.cart_btn{
+    background:rgb(5, 196, 5);
+    width:100%;
+    height:40px;
+    margin: 5px;
+    display:flex;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+}
+.qty{
+    border:1px solid black;
+    width:100%;
+    height:40px;
+    margin:5px;
+    /* text-align: center; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.price{
+    display:flex;
+    flex-direction: column;
+    margin-bottom:5px;
+}
+.image_item{
+    /* width:400px; */
+    height:400px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background:rgb(7, 197, 7); */
+}
+.tittle{
+    margin-top: 5px;
+}
+</style>
+<div class="container">
+    <div class="main">
+     {% if object_list %}
+        {% for items in object_list %}
+            <div class="card">
+                <div class="tittle">
+               <h2><a href="{{items.get_absolute_url}}">{{items.title}}</a></h2>
+            </div>
+               <div class="image_item">
+                   <!-- <img src="{{items.image" alt="item img"> -->
+                   <img src="{{ items.image.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" /> 
+               </div>
+               on stock:<p>{{items.on_stock}}</p>
+               <div class="price">
+                  
+                {% if items.discount_price %} 
+                     <!-- <del>{{items.price}}</del> -->
+                       Price <p> <a href="{{items.get_absolute_url}}">{{items.discount_price}}</a> </p>
+                {% else %}
+                        Price<p> <a href="{{items.get_absolute_url}}"> {{items.price}}</a> </p>
+                {% endif %}
+               </div>  
+
+                 <div class="qty_cart">
+                        <div class="qty">Qty  1{{items.quantity}}</div>
+                        <div class="cart_btn"><a href="{{items.get_add_to_cart_url}}">add to cart</a></div>
+                 </div>
+            </div>
+   
+        {% endfor%}
+     {% else%}  
+     <p>no record found</p> 
+     {% endif %}
+    </div>
+</div>
+{% endblock content%}

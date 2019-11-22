@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.cart_list{
+    width:100%;
+    height:70vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}    
+.cart_item_title{
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    width:60%;
+}
+thead>th,tbody>td{
+    margin:20px;
+}
+
+</style>
+
+    <div class="cart_list">
+        {% if item %}
+        {% for item in cart_obaject_list%}
+        <div class="cart_item_title">
+            <table>
+                <thead>
+                    <th>title</th>
+                    <th>quantity</th>
+                    <th>amount</th>
+                </thead>
+
+                <tbody>
+                    <td>{{item.title}}</td>
+                   <!-- x<td>{{2}}</td> -->
+                    <td>{{item.price}}</td>
+                </tbody>
+                <!-- <p>{{item.total}}</p> -->
+            </table>
+        </div>
+        {% endfor %}
+        {% else%}
+        <table>
+                <thead>
+                    <th>title</th>
+                    <th>quantity</th>
+                    <th>amount</th>
+                </thead>
+                <tr>
+                    <td>watch</td>
+                   x<td>2</td>
+                    <td>200</td>
+                </tr>
+            </table>
+            <div class="total">
+                    <p>Total</p>
+            </div>
+        </div>
+        {% endif%}
+
+    </div>
+{% endblock%}
